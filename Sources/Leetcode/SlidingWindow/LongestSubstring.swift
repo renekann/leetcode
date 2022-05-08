@@ -7,16 +7,14 @@ extension Solution {
         
         let determineLongestSubstring: (String, [String.Element]) -> String = { currentlongestSubstring, currentSubstringList in
             let currentSubstring = currentSubstringList.reduce("") { $0 + String($1) }
-            print("currentSubstring \(currentSubstring)")
             return (currentlongestSubstring.count < currentSubstring.count) ? currentSubstring : currentlongestSubstring
         }
         
         var longestSubstring = "";
         var currentSubstringList: [String.Element] = []
         
-        for (index, char) in s.enumerated() {
+        for (_, char) in s.enumerated() {
             
-            print("currentChar \(char)")
             
             if currentSubstringList.contains(char) {
                 
@@ -25,8 +23,6 @@ extension Solution {
                 let charOccurence = currentSubstringList.firstIndex(of: char)
                 
                 if let charOccurence = charOccurence {
-                    print("charOccurence \(charOccurence)")
-                    print("remove until \(charOccurence) for \(char)")
                     currentSubstringList.removeFirst(charOccurence + 1)
                 }
             }
@@ -35,7 +31,6 @@ extension Solution {
         }
 
         longestSubstring = determineLongestSubstring(longestSubstring, currentSubstringList);
-        print("longestSubstring \(longestSubstring)")
         return longestSubstring.count;
     }
 }

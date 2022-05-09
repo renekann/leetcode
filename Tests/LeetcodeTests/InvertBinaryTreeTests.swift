@@ -26,7 +26,6 @@ final class InvertBinaryTreeTests: XCTestCase {
         let solution = Solution()
         
         // act
-        print(givenTree.toString())
         let invertedTree = solution.invertTree(givenTree)
         // assert
         XCTAssertEqual(invertedTree?.toString(), "4796231")
@@ -54,6 +53,6 @@ final class InvertBinaryTreeTests: XCTestCase {
         let invertedTree = solution.invertTree(nil)
         
         // assert
-        XCTAssertEqual(invertedTree?.toString(), "")
+        XCTAssertEqual(invertedTree?.toString(), nil)
     }
 }

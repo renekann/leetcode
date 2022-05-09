@@ -10,10 +10,6 @@ extension Solution {
             } else {
                 cache[orderedWord] = [word]
             }
-            
-            print("word \(word)")
-            print("orderedWord \(orderedWord)")
-            print("cache \(cache)")
         }
         
         return cache.values.map { $0 }
